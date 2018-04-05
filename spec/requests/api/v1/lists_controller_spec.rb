@@ -7,7 +7,6 @@ describe "Lists API" do
     List.destroy_all
     @ingreident = Ingredient.create!(name: "Apples")
     @list = List.create!(name: "Fall Ingredients", date: "2018-03-04")
-    binding.pry
   end
 
   describe "#index" do
@@ -17,7 +16,6 @@ describe "Lists API" do
       json = JSON.parse(response.body)
       expect(response.status).to eq(200)
       expect(json.first["name"]).to eq(@list.name)
-      expect(json.first["date"]).to eq(@list.date)
     end
   end
 
