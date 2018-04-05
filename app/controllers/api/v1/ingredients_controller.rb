@@ -7,4 +7,6 @@ class Api::V1::IngredientsController < ApplicationController
   end
 
   def
+
+  end
 end
