@@ -6,7 +6,14 @@ class Api::V1::IngredientsController < ApplicationController
     render json: ingredients
   end
 
-  def
+  def create
+    ingredient = Ingredient.new(name)
 
+    if ingredient.save
+      render json: ingredient
+    else
+      render json: ingredient.errors, status: 400
+    end 
   end
+
 end
