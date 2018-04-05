@@ -1,3 +1,4 @@
 class List < ApplicationRecord
-  has_many :ingredients, through: :list_ingredients
+  has_many :list_ingredients
+  has_many :ingredients, {through: :list_ingredients}
 end
