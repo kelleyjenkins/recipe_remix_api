@@ -37,8 +37,3 @@ List.all.each do |list|
     list.ingredients << Ingredient.find(random_id)
   end
 end
-#
-# ListIngredients.each do |item|
-#   new_item = ListIngredient.create!(list: item.first, ingredient: item.last)
-#   puts "Created list ingredient"
-# end
