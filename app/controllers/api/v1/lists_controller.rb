@@ -1,7 +1,9 @@
 class Api::V1::ListsController < ApplicationController
 
   def index
-    render json: User.find(params[:user_id]).lists
+    lists = List.all
+
+    render json: lists
   end
 
   def create
