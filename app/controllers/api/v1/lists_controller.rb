@@ -19,7 +19,7 @@ class Api::V1::ListsController < ApplicationController
   private
 
   def list_params
-    params.require(:list).permit(:name, :date)
+    params.require(:list).permit(:name, :date, :user_id)
   end
 
 end
