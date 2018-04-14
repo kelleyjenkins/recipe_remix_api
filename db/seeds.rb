@@ -8,6 +8,7 @@
 
 Ingredient.destroy_all
 List.destroy_all
+User.destroy_all
 
 Ingredients = [
   ["Apples"],
@@ -21,13 +22,17 @@ Lists = [
   ["List2", Date.new(2018, 4, 15)]
 ]
 
+User = [
+  ["KJ", "email@email.com", "203985"]
+]
+
 Ingredients.each do |ingredient|
   new_ingredient = Ingredient.create!(name: ingredient.first)
   puts "Created new ingredient"
 end
 
 Lists.each do |list|
-  new_list = List.create!(name: list.first, date: list.last)
+  new_list = List.create!(user: User[0], name: list.first, date: list.last)
   puts "Created #{new_list.name}"
 end
 
