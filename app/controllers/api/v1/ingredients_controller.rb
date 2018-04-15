@@ -7,12 +7,16 @@ class Api::V1::IngredientsController < ApplicationController
   end
 
   def create
-    ingredient = Ingredient.new(ingredient_params)
-    
-    if ingredient.save
-      render json: ingredient
+    ingredient = Ingredient.find_by(name: ingredient_params[:name])
+
+    return render(json: ingredient) if ingredient
+
+    new_ingred = Ingredient.new(ingredient_params)
+
+    if new_ingred.save
+      render json: new_ingred
     else
-      render json: ingredient.errors, status: 400
+      render json: new_ingred.errors, status: 400
     end
   end
 

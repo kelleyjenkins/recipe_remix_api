@@ -7,7 +7,9 @@ Rails.application.routes.draw do
         get ':id/lists', to: 'lists#index'
       end
       resources :ingredients
-      get "/lists", to: "lists#index"
+      resources :lists
+      resources :users
+      resources :list_ingredients
     end
   end
 
