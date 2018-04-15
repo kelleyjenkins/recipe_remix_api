@@ -6,6 +6,12 @@ class Api::V1::ListsController < ApplicationController
     render json: lists
   end
 
+  def show
+    list = List.find(params[:id])
+
+    render json: list
+  end
+
   def create
     list = List.new(list_params)
 
@@ -14,6 +20,12 @@ class Api::V1::ListsController < ApplicationController
     else
       render json: list.errors, status: 400
     end
+  end
+
+  def destroy
+    list = List.find(params[:id])
+
+    list.destroy
   end
 
   private
