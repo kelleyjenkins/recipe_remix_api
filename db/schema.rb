@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180414202533) do
+ActiveRecord::Schema.define(version: 20180416200307) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,13 @@ ActiveRecord::Schema.define(version: 20180414202533) do
     t.index ["user_id"], name: "index_lists_on_user_id"
   end
 
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.string "url"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_recipes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email"
@@ -42,4 +49,5 @@ ActiveRecord::Schema.define(version: 20180414202533) do
   add_foreign_key "list_ingredients", "ingredients"
   add_foreign_key "list_ingredients", "lists"
   add_foreign_key "lists", "users"
+  add_foreign_key "recipes", "users"
 end
