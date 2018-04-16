@@ -7,8 +7,9 @@ class Api::V1::IngredientsController < ApplicationController
   end
 
   def create
-    ingredient = Ingredient.find_by(name: ingredient_params[:name])
+    params[:ingredient][:name] = params[:ingredient][:name].titleize
 
+    ingredient = Ingredient.find_by(name: ingredient_params[:name])
     return render(json: ingredient) if ingredient
 
     new_ingred = Ingredient.new(ingredient_params)
