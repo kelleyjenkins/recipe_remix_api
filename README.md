@@ -42,4 +42,4 @@ https://fathomless-plateau-58961.herokuapp.com/api/v1/users/:id/lists
 - [Kelley Jenkins](https://github.com/kelleyjenkins)
 
 ## Additional Information
-The project was developed by the Turing School of Software and Design as a paired project for Module 3. More information can be found here: http://backend.turing.io/module3/projects/rails_engine
+The project was developed by the Turing School of Software and Design as the backend for the Capstone Project for Module 4.
